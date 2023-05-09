@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <h1>Mon Panier</h1>
+
+    {% for objet in cart %}
+
+    {{ objet.produit.nom }}
+
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<section class="article">
+        <article>
+            <h2>{{ produit.nom }}</h2>
+            <button class="btn btn-dark"><a href="{{ path('ajoutCart', {id: produit.id}) }}">Ajouter au panier</a></button>
+            <div class="content">
+                <img src="{{produit.image}}" alt="">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim animi incidunt eos, rem harum a.</p>
+                <hr>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium reprehenderit aspernatur iusto praesentium, doloremque voluptates perspiciatis asperiores dolorem ipsa odit natus sunt enim delectus commodi nesciunt dolor a, adipisci totam itaque quisquam non sequi aut dolore! Fugiat expedita officiis sunt deleniti, dolores quisquam, molestiae fugit illum vero veniam atque ad!</p>
+                <p>Doloremque voluptates asperiores nemo est expedita unde vitae, perspiciatis quos facere hic officia voluptatibus perferendis similique obcaecati veniam quas excepturi optio consequuntur iste dicta. Quos nemo distinctio itaque magni? Dolore sunt asperiores placeat veniam qui quaerat. Placeat odio at iusto voluptatem. Dolor cupiditate quo eaque veniam voluptatibus, nisi possimus quae.</p>
+            </div>
+        </article>
+{% endblock %}

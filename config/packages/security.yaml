@@ -1,17 +1,32 @@
 security:
     # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
     password_hashers:
+        App\Entity\User:
+            algorithm: bcrypt
         Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:
-        users_in_memory: { memory: null }
+        users_in_memory: { memory: ~ }
+        in_datatbase: 
+            entity:
+                class: App\Entity\User
+                property: email
+
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
             lazy: true
-            provider: users_in_memory
+            provider: in_datatbase
+
+            form_login:
+                login_path: security_login
+                check_path: security_login
+
+            logout: 
+                path: security_logout
+                target: produit
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall

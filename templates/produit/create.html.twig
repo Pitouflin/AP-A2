@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <h1>Création d'un produit</h1>
+
+    {{ form_start(formProduit) }}
+
+    {{ form_widget(formProduit) }}
+
+    <button type="submit" class="btn btn-dark">Demander le produit</button>
+
+    {{ form_end(formProduit) }}
+
+{% endblock %}
